@@ -2,6 +2,14 @@
 
 本项目是一个展示非物质文化遗产的小程序，包含前端和后端两部分。
 
+<p float="left">
+  <img src="pictureShow/微信图片_20250616133249.jpg" width="200"/>
+  <img src="pictureShow/微信图片_20250616133250.jpg" width="200"/>
+  <img src="pictureShow/微信图片_202506161332491.jpg" width="200"/>
+  <img src="pictureShow/微信图片_202506161332501.jpg" width="200"/>
+  <img src="pictureShow/微信图片_202506161332502.jpg" width="200"/>
+  <img src="pictureShow/微信图片_20250616133234.jpg" width="200"/>
+</p>
 
 
 ## 项目结构
