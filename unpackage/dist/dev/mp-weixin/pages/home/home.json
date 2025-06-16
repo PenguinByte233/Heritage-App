@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "category-scroll": "../../components/CategoryScroll",
+    "tab-section": "../../components/TabSection",
+    "tutorial-card": "../../components/TutorialCard"
+  }
+}

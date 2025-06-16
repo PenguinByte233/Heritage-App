@@ -1,0 +1,227 @@
+
+/* 全局容器 */
+.container {
+  min-height: 100vh;
+  background-color: #f5f1e6; /* 与profile页面保持一致的背景色 */
+  position: relative;
+  padding: 0 30px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 状态栏安全区域 */
+.status-bar {
+  height: 44px;
+}
+
+/* 返回按钮 */
+.back-btn {
+  position: absolute;
+  top: 54px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.back-icon {
+  font-size: 22px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 标题区域 */
+.header-section {
+  padding: 20px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+.welcome-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+.subtitle-text {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+/* 表单区域 */
+.form-section {
+  margin-bottom: 20px;
+}
+.input-group {
+  margin-bottom: 24px;
+}
+.input-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 50px;
+  border-radius: 12px;
+  padding: 0 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.input-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.input-field {
+  flex: 1;
+  height: 50px;
+  font-size: 16px;
+  color: #333;
+}
+.verify-code {
+  position: relative;
+}
+.verify-btn {
+  position: absolute;
+  right: 10px;
+  height: 34px;
+  line-height: 34px;
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  color: #fff;
+  font-size: 12px;
+  border-radius: 17px;
+  padding: 0 15px;
+  text-align: center;
+}
+.verify-btn.disabled {
+  background: #ccc;
+  color: #fff;
+}
+
+/* 选项区域 */
+.options-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.agreement-container {
+  display: flex;
+  align-items: center;
+}
+.agreement-text {
+  font-size: 12px;
+  color: #666;
+}
+.agreement-link {
+  font-size: 12px;
+  color: #8a6642;
+}
+.forgot-password {
+  text-align: right;
+}
+.forgot-password-link {
+  font-size: 14px;
+  color: #8a6642;
+}
+
+/* 提交按钮 */
+.submit-section {
+  margin-bottom: 25px;
+}
+.submit-button {
+  height: 50px;
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  color: #fff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(138, 102, 66, 0.3);
+  border: none;
+}
+.submit-button:active {
+  transform: scale(0.98);
+}
+.submit-button[disabled] {
+  background: #ccc;
+  box-shadow: none;
+}
+.submit-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* 切换模式 */
+.switch-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.switch-text {
+  font-size: 14px;
+  color: #666;
+}
+.switch-action {
+  font-size: 14px;
+  color: #8a6642;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+/* 其他登录方式 */
+.other-login {
+  margin-top: auto;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.divider-text {
+  padding: 0 15px;
+  font-size: 12px;
+  color: #999;
+}
+.social-buttons {
+  display: flex;
+  justify-content: center;
+}
+.social-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.wechat {
+  background-color: #07C160;
+}
+.social-icon {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}

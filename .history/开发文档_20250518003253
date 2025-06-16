@@ -1,0 +1,176 @@
+vue3开发
+Below is a concise development document for a “非遗小程序”项目，采用 Node.js + Express + MySQL，包含前端规划、数据库设计与后端 API 设计。
+
+一、概要
+本项目分前端（微信小程序原生或 H5）、后端（Node.js + Express）与数据库（MySQL）三层架构，前端负责页面渲染与交互，后端提供 RESTful 接口，数据库存储非遗分类、商品、教程、社区帖子与订单等核心数据。
+
+二、前端规划
+页面结构：共五个主页面：
+
+Home：顶部横向滚动随机展示5张具有代表性的图片我后期会筛选放到前端静态资源处
+中间的非遗资源等先不变
+然后下面是一个非遗项目的轮播图展示 7 个非遗大类(传统表演艺术、传统服饰、传统节日与庆典、传统乐器与音乐、传统艺术与工艺、传统装饰与配饰、文化与创意产业)我后续会随机挑选放到前端的静态资源文件内使用，然后点击哪个图片的大类就直接跳转到学习页面内的大类供用户自己选择小类进行学习。
+。
+去除非遗传承人这一选项
+
+Buy：一共分为zu'bian
+。
+
+Learn：页面是首页非遗项目点击后跳转的地方，供用户学习对应的内容。
+Medium
+。
+
+Chat：社区广场，显示帖子列表，支持发帖、回帖、点赞功能
+Bezkoder
+。
+
+Profile：用户信息、订单列表、退出登录与联系客服入口
+Express
+。
+
+组件设计：
+
+CategoryScroll：接收类型数组，渲染 <scroll-view> 内的分类按钮
+LogRocket Blog
+。
+
+TabSection：管理 Tab 切换逻辑，显示对应内容区
+Medium
+。
+
+ProductCard、TutorialCard、PostItem：分别渲染商品、教程、帖子基本信息与操作按钮。
+
+交互与数据：
+
+页面加载时通过封装的 api.js 调用后端接口，使用 wx.request（或 fetch）获取数据并 setData
+W3Schools
+。
+
+学习进度存储采用小程序 wx.setStorageSync/wx.getStorageSync，H5 则用 LocalStorage。本地记录视频播放进度、已读教程等
+Medium
+。
+
+三、数据库设计
+sql
+复制
+编辑
+-- 非遗大类
+CREATE TABLE heritage_types (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  description TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 非遗子类
+CREATE TABLE categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  heritage_type_id INT NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  FOREIGN KEY (heritage_type_id) REFERENCES heritage_types(id)
+);
+
+-- 商品表
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  category_id INT NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  image_url VARCHAR(255),
+  description TEXT,
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+-- 教程表
+CREATE TABLE tutorials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  category_id INT NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  content TEXT,
+  video_url VARCHAR(255),
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+-- 社区帖子
+CREATE TABLE posts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  content TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 订单表
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  product_ids VARCHAR(255) NOT NULL,  -- 可存 JSON 数组或逗号分隔
+  status ENUM('pending','paid','shipped','completed') DEFAULT 'pending',
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 用户表
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  openid VARCHAR(128) UNIQUE,  -- 微信登录标识
+  nickname VARCHAR(50),
+  avatar_url VARCHAR(255)
+);
+以上设计遵循 MySQL 关系型建模惯例，并为后续查询效率可创建必要索引
+W3Schools
+。
+
+四、后端 API 设计
+功能	方法	路径	描述
+获取非遗大类	GET	/api/heritage-types	返回所有大类列表
+获取子类	GET	/api/categories?typeId={typeId}	根据大类 ID 查询子类
+获取商品列表	GET	/api/products?categoryId={catId}	根据子类 ID 查询商品列表
+获取商品详情	GET	/api/products/{id}	查询单个商品详情
+创建订单	POST	/api/orders	提交订单（请求体：{ userId, productIds[] }）
+获取订单列表	GET	/api/orders?userId={userId}	查询指定用户的所有订单
+获取教程列表	GET	/api/tutorials?categoryId={catId}	查询指定子类的教程列表
+获取帖子列表	GET	/api/posts?page=&size=	分页查询社区帖子
+发布帖子	POST	/api/posts	发布新帖子（请求体：{ userId, title, content }）
+用户登录（微信）	POST	/api/users/login	小程序 code 换 openid 并创建/查询用户
+
+路由与控制器
+使用 Express 路由模块化：
+
+
+// routes/heritage.js
+router.get('/heritage-types', heritageController.listTypes);
+router.get('/categories', heritageController.listCategories);
+
+// routes/product.js
+router.get('/products', productController.list);
+router.get('/products/:id', productController.detail);
+
+// routes/order.js
+router.post('/orders', orderController.create);
+router.get('/orders', orderController.list);
+
+// routes/tutorial.js
+router.get('/tutorials', tutorialController.list);
+
+// routes/post.js
+router.get('/posts', postController.list);
+router.post('/posts', postController.create);
+
+// routes/user.js
+router.post('/users/login', userController.login);
+在 app.js 中挂载：
+
+
+app.use('/api', require('./routes/heritage'));
+app.use('/api', require('./routes/product'));
+// ……
+技术要点
+数据库连接：使用 mysql2 驱动，配置连接池，确保高并发时连接复用
+Scaler
+。
+
+输入校验：使用 express-validator 做请求体合法性验证，防止 SQL 注入与无效数据。
+
+错误处理：全局错误中间件统一格式化返回 { code, message }，并记录日志。
+
+跨域与安全：本地调试可启用 cors，生产环境则限定域名；对敏感接口可加简单鉴权（如签名或 JWT）。

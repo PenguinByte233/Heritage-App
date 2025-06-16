@@ -1,0 +1,154 @@
+
+.container {
+  padding: 0;
+  background-color: #f0e6d2; /* 统一背景色 */
+  min-height: 100vh;
+}
+.header {
+  padding: 0 0 0.625rem 0;
+  background-color: #f0e6d2;
+  text-align: center;
+}
+.status-bar-height {
+  height: 2.75rem; /* 状态栏高度，根据实际情况调整 */
+}
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #6d4126;
+  display: inline-block;
+  padding: 0.9375rem 0 0.3125rem 0;
+}
+
+/* 导航栏样式 */
+.nav-tabs {
+  display: flex;
+  white-space: nowrap;
+  background-color: #f0e6d2; /* 与容器背景色保持一致 */
+  padding: 0.25rem 0 0.375rem 0; /* 稍微增加下方内边距代替边框 */
+  position: relative;
+  z-index: 10;
+}
+.nav-tab {
+  display: inline-block;
+  padding: 0.625rem 0.9375rem;
+  position: relative;
+}
+.nav-text {
+  font-size: 0.875rem;
+  color: #8a6642; /* 棕色调，与整体主题一致 */
+}
+.nav-tab.active .nav-text {
+  color: #6d4126;
+  font-weight: bold;
+}
+.nav-tab.active:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 1.875rem;
+  height: 0.125rem;
+  background-color: #6d4126;
+}
+
+/* 小标题列表样式 */
+.subcategory-list {
+  padding: 0.9375rem 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem; /* 增大间距，使卡片更加突出 */
+}
+.subcategory-item {
+  position: relative;
+  width: 100%;
+  height: 11.875rem; /* 稍微增加高度 */
+  border-radius: 0.5rem; /* 增大圆角 */
+  overflow: hidden;
+  box-shadow: 0 0.1875rem 0.5rem rgba(109, 65, 38, 0.1); /* 阴影颜色与主题一致，降低不透明度 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.subcategory-item:active {
+  transform: scale(0.98); /* 点击时的缩小效果 */
+  box-shadow: 0 0.09375rem 0.25rem rgba(109, 65, 38, 0.08);
+}
+.image-swiper {
+  width: 100%;
+  height: 100%;
+}
+.subcategory-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-count {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.1875rem 0.5rem;
+  border-radius: 0.9375rem;
+  z-index: 2;
+}
+.image-count-text {
+  color: #ffffff;
+  font-size: 0.6875rem;
+}
+.subcategory-title-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.75rem 0.875rem; /* 增大内边距 */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  width: 100%;
+  height: 4.375rem; /* 固定高度，使渐变效果更明显 */
+  display: flex;
+  align-items: flex-end;
+}
+.subcategory-title {
+  font-size: 1.0625rem; /* 稍微增大字体 */
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+.loading-icon {
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 0.125rem solid #e0d6c2;
+  border-top: 0.125rem solid #6d4126;
+  border-radius: 50%;
+  margin-bottom: 0.625rem;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% { transform: rotate(0deg);
+}
+100% { transform: rotate(360deg);
+}
+}
+.loading-text {
+  font-size: 0.875rem;
+  color: #8a6642; /* 棕色调，与整体主题一致 */
+}
+.empty-tip {
+  width: 100%;
+  padding: 2.5rem 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3); /* 降低不透明度，使其与背景更协调 */
+  border-radius: 0.375rem;
+  margin-top: 1.25rem;
+}
+.empty-text {
+  font-size: 0.875rem;
+  color: #8a6642;
+  font-weight: 500;
+}

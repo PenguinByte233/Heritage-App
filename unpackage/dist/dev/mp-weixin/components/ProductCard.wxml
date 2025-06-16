@@ -1,0 +1,1 @@
+<view class="product-card" bindtap="{{e}}"><image src="{{a}}" class="product-image" mode="aspectFill"></image><view class="product-info"><text class="product-name">{{b}}</text><view class="product-price-row"><text class="product-price">¥{{c}}</text><button class="custom-btn" size="mini" catchtap="{{d}}">联系客服定制</button></view></view></view>

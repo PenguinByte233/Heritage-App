@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/home/map-detail",
+    "pages/buy/buy",
+    "pages/buy/detail",
+    "pages/learn/learn",
+    "pages/learn/content",
+    "pages/learn/category",
+    "pages/chat/chat",
+    "pages/chat/detail",
+    "pages/chat/post",
+    "pages/profile/profile",
+    "pages/order/order-detail",
+    "pages/login/login"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "非遗小程序",
+    "navigationBarBackgroundColor": "#f0e6d2",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#6d4126",
+    "borderStyle": "black",
+    "backgroundColor": "#f0e6d2",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/buy/buy",
+        "text": "购买",
+        "iconPath": "static/images/tabbar/buy.png",
+        "selectedIconPath": "static/images/tabbar/buy-active.png"
+      },
+      {
+        "pagePath": "pages/learn/learn",
+        "text": "学习",
+        "iconPath": "static/images/tabbar/learn.png",
+        "selectedIconPath": "static/images/tabbar/learn-active.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "社区",
+        "iconPath": "static/images/tabbar/chat.png",
+        "selectedIconPath": "static/images/tabbar/chat-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "static/images/tabbar/profile.png",
+        "selectedIconPath": "static/images/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

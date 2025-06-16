@@ -1,0 +1,68 @@
+
+.tutorial-card {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  position: relative;
+}
+.tutorial-type-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d4237a;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 1;
+}
+.tutorial-type-tag.image-type {
+  background-color: #2e7d32;
+}
+.tutorial-image {
+  width: 100%;
+  height: 160px;
+}
+.tutorial-info {
+  padding: 10px;
+}
+.tutorial-title {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+.tutorial-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tutorial-category {
+  color: #666;
+  font-size: 12px;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+.progress-container {
+  width: 100px;
+  height: 6px;
+  background-color: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-bar {
+  height: 100%;
+  background-color: #d4237a;
+}
+.progress-text {
+  position: absolute;
+  right: -30px;
+  top: -5px;
+  font-size: 12px;
+  color: #d4237a;
+}

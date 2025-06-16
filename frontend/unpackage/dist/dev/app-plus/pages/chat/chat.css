@@ -1,0 +1,261 @@
+
+.container {
+  padding: 0;
+  background-color: #f5f1e6; /* 与其他页面保持一致的背景色 */
+  min-height: 100vh;
+  position: relative; /* 为固定定位的按钮提供参考 */
+}
+.top-area {
+  background-color: #f0e6d2;
+  box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.05);
+}
+.status-bar {
+  height: 44px; /* 适配顶部安全区域 */
+  background-color: #f0e6d2;
+}
+.header {
+  padding: 0.625rem 0.9375rem;
+  background-color: #f0e6d2;
+  border-bottom: 1px solid #f0e6d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #6d4126;
+  text-align: center;
+}
+.post-list {
+  padding: 0.625rem;
+  margin-top: 0.3125rem;
+  padding-bottom: 3.75rem; /* 为底部按钮留出空间 */
+}
+
+/* 浮动发布按钮样式 */
+.float-post-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.125rem 0.625rem rgba(109, 65, 38, 0.4);
+  z-index: 10;
+}
+.float-post-icon {
+  font-size: 1.875rem;
+  color: #fff;
+  line-height: 1;
+}
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.875rem 0;
+}
+.loading-spinner {
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 0.1875rem solid #f3f3f3;
+  border-top: 0.1875rem solid #6d4126;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 0.625rem;
+}
+@keyframes spin {
+0% { transform: rotate(0deg);
+}
+100% { transform: rotate(360deg);
+}
+}
+.loading-text {
+  font-size: 0.875rem;
+  color: #999;
+}
+.post-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.9375rem;
+  margin-bottom: 0.625rem;
+  box-shadow: 0 0.0625rem 0.3125rem rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  position: relative;
+}
+.post-card:active {
+  transform: scale(0.98);
+  background-color: #faf7f2;
+  box-shadow: 0 0.03125rem 0.15625rem rgba(0, 0, 0, 0.1);
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.625rem;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  border-radius: 50%;
+  margin-right: 0.46875rem;
+  border: 0.0625rem solid #f0e6d2;
+}
+.post-author {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  color: #333;
+}
+.post-time {
+  font-size: 0.75rem;
+  color: #999;
+}
+.post-content {
+  margin-bottom: 0.625rem;
+}
+.post-text {
+  font-size: 0.9375rem;
+  color: #333;
+  line-height: 1.6;
+}
+.post-footer {
+  display: flex;
+  border-top: 1px solid #f0e6d2;
+  padding-top: 0.625rem;
+}
+.post-action {
+  display: flex;
+  align-items: center;
+  margin-right: 1.25rem;
+}
+.post-action-icon {
+  font-size: 1rem;
+  margin-right: 0.3125rem;
+}
+.post-action-count {
+  font-size: 0.875rem;
+  color: #999;
+}
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.125rem 0;
+}
+.empty-icon {
+  width: 5.625rem;
+  height: 5.625rem;
+  margin-bottom: 0.625rem;
+  opacity: 0.7;
+}
+.empty-text {
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.9375rem;
+}
+.empty-action {
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 0.46875rem 1.25rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(109, 65, 38, 0.3);
+}
+.post-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post-form {
+  width: 90%;
+  max-width: 20.3125rem;
+  background-color: #fff;
+  border-radius: 0.625rem;
+  padding: 0.9375rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+.post-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.9375rem;
+}
+.post-form-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #6d4126;
+}
+.post-form-close {
+  font-size: 1.25rem;
+  color: #999;
+}
+.user-info-preview {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.625rem;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
+  background-color: #f9f6f0;
+}
+.avatar-small {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  margin-right: 0.46875rem;
+}
+.username {
+  font-size: 0.875rem;
+  color: #6d4126;
+  font-weight: 500;
+}
+.post-form-input {
+  width: 100%;
+  height: 7.5rem;
+  padding: 0.625rem;
+  font-size: 0.9375rem;
+  color: #333;
+  line-height: 1.6;
+  border: 1px solid #eee;
+  border-radius: 0.3125rem;
+  box-sizing: border-box;
+  margin-bottom: 0.625rem;
+}
+.post-form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-form-count {
+  font-size: 0.75rem;
+  color: #999;
+}
+.post-form-submit {
+  padding: 0.46875rem 1.25rem;
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(109, 65, 38, 0.3);
+  border: none;
+}
+.post-form-submit[disabled] {
+  background: #ccc;
+  box-shadow: none;
+}

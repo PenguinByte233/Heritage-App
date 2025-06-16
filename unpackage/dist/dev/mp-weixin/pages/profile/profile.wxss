@@ -1,0 +1,149 @@
+
+.container {
+  padding: 15px;
+  background-color: #f5f5f5;
+}
+.user-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.name-box {
+  flex: 1;
+}
+.username {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+.login-btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #d4237a;
+  color: white;
+  border-radius: 15px;
+  font-size: 12px;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-num {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+.stat-label {
+  font-size: 12px;
+  color: #999;
+}
+.section-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.section-more {
+  font-size: 12px;
+  color: #999;
+}
+.order-icons {
+  display: flex;
+  justify-content: space-between;
+}
+.order-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.iconfont {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.icon-text {
+  font-size: 12px;
+  color: #666;
+}
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 10px;
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 0 4px;
+}
+.menu-list {
+  background-color: #fff;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.menu-item:last-child {
+  border-bottom: none;
+}
+.menu-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.menu-text {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+.menu-arrow {
+  color: #ccc;
+  font-size: 12px;
+}
+.logout-btn {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  background-color: #fff;
+  color: #ff4d4f;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 30px;
+}

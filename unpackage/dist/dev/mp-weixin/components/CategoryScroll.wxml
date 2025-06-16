@@ -1,0 +1,1 @@
+<view class="category-scroll-container"><scroll-view scroll-x class="category-scroll" show-scrollbar="false"><view wx:for="{{a}}" wx:for-item="item" wx:key="c" class="{{['category-item', item.d && 'active']}}" bindtap="{{item.e}}"><image src="{{item.a}}" class="category-icon"></image><text class="category-name">{{item.b}}</text></view></scroll-view></view>

@@ -1,0 +1,122 @@
+{
+	"pages": [
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "福建非遗",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/buy/buy",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "购买"
+			}
+		},
+		{
+			"path": "pages/buy/buy",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "购买"
+			}
+		},
+		{
+			"path": "pages/learn/learn",
+			"style": {
+				"navigationBarTitleText": "学习",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/learn/content",
+			"style": {
+				"navigationBarTitleText": "学习内容",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/chat/chat",
+			"style": {
+				"navigationBarTitleText": "社区"
+			}
+		},
+		{
+			"path": "pages/chat/detail",
+			"style": {
+				"navigationBarTitleText": "帖子详情",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"animationType": "slide-in-right",
+					"animationDuration": 300
+				}
+			}
+		},
+		{
+			"path": "pages/chat/post",
+			"style": {
+				"navigationBarTitleText": "发布帖子",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/profile/profile",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "我的"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "非遗小程序",
+		"navigationBarBackgroundColor": "#f0e6d2",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#6d4126",
+		"borderStyle": "black",
+		"backgroundColor": "#f0e6d2",
+		"list": [
+			{
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "static/images/tabbar/home.png",
+				"selectedIconPath": "static/images/tabbar/home-active.png"
+			},
+			{
+				"pagePath": "pages/buy/buy",
+				"text": "购买",
+				"iconPath": "static/images/tabbar/buy.png",
+				"selectedIconPath": "static/images/tabbar/buy-active.png"
+			},
+			{
+				"pagePath": "pages/learn/learn",
+				"text": "学习",
+				"iconPath": "static/images/tabbar/learn.png",
+				"selectedIconPath": "static/images/tabbar/learn-active.png"
+			},
+			{
+				"pagePath": "pages/chat/chat",
+				"text": "社区",
+				"iconPath": "static/images/tabbar/chat.png",
+				"selectedIconPath": "static/images/tabbar/chat-active.png"
+			},
+			{
+				"pagePath": "pages/profile/profile",
+				"text": "我的",
+				"iconPath": "static/images/tabbar/profile.png",
+				"selectedIconPath": "static/images/tabbar/profile-active.png"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

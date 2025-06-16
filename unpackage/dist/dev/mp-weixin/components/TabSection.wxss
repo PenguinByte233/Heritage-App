@@ -1,0 +1,35 @@
+
+.tab-section {
+  width: 100%;
+}
+.tab-header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+.tab-item {
+  flex: 1;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+}
+.tab-item.active {
+  color: #d4237a;
+  font-weight: bold;
+}
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background-color: #d4237a;
+  border-radius: 3px;
+}
+.tab-content {
+  padding: 15px;
+}

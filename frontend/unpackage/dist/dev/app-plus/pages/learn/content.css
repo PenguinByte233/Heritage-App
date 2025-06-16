@@ -1,0 +1,237 @@
+
+.container {
+  padding: 0;
+  background-color: #f0e6d2; /* 与learn.vue保持一致 */
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+.fixed-back-button {
+  position: fixed;
+  top: 2.75rem; /* 状态栏高度 */
+  left: 0.9375rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+.fixed-back-button:active {
+  background-color: rgba(109, 65, 38, 0.2);
+  transform: scale(0.95);
+}
+.back-icon {
+  font-size: 1.125rem;
+  color: #6d4126; /* 与learn.vue的主题色一致 */
+  font-weight: bold;
+}
+.header {
+  background-color: #f0e6d2;
+  padding: 0 0 0.3125rem 0;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
+}
+.status-bar-height {
+  height: 2.75rem; /* 状态栏高度 */
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0.9375rem;
+}
+.title-spacer {
+  width: 2.1875rem;
+  margin-right: 0.625rem;
+}
+.title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #6d4126; /* 与learn.vue的主题色一致 */
+  text-align: center;
+  flex: 1;
+}
+.content-area {
+  padding: 1.25rem 0.9375rem;
+}
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.125rem 0;
+}
+.loading-icon {
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 0.125rem solid #e0d6c2;
+  border-top: 0.125rem solid #6d4126;
+  border-radius: 50%;
+  margin-bottom: 0.625rem;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% { transform: rotate(0deg);
+}
+100% { transform: rotate(360deg);
+}
+}
+.content-count {
+  background-color: rgba(109, 65, 38, 0.8);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.9375rem;
+  display: inline-block;
+  margin-bottom: 0.9375rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+.content-count-text {
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.content-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.9375rem rgba(109, 65, 38, 0.12);
+  margin-bottom: 1.5625rem;
+  overflow: hidden;
+  border: 0.03125rem solid rgba(109, 65, 38, 0.1);
+  transition: all 0.3s;
+  position: relative;
+}
+.card-title {
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  color: #fff;
+  padding: 0.78125rem 0.9375rem;
+  font-size: 1.0625rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  letter-spacing: 0.0625rem;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+.title-decoration {
+  position: absolute;
+  height: 0.125rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.125rem;
+}
+.card-body {
+  padding: 0.625rem;
+}
+.card-content {
+  padding: 0.625rem 0.9375rem 0.9375rem;
+  color: #333;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  border-bottom: 0.03125rem dashed rgba(109, 65, 38, 0.1);
+  margin-bottom: 0.625rem;
+}
+.card-content .paragraph {
+  text-indent: 2em; /* 首行缩进两个字符 */
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+.card-content h3 {
+  color: #6d4126;
+  font-size: 1rem;
+  margin: 0.9375rem 0 0.625rem;
+  font-weight: bold;
+  border-left: 0.1875rem solid #8a6642;
+  padding-left: 0.5rem;
+}
+.card-content strong {
+  color: #6d4126;
+  font-weight: bold;
+}
+.card-content em {
+  font-style: italic;
+  color: #8a6642;
+}
+.card-images-swiper {
+  padding: 0.3125rem 0.625rem 0.9375rem;
+  position: relative;
+  margin-top: 0.625rem;
+}
+.image-count-badge {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.9375rem;
+  background-color: rgba(109, 65, 38, 0.7);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.625rem;
+  z-index: 10;
+}
+.image-count-text {
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+.images-swiper {
+  width: 100%;
+  height: 12.5rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.375rem;
+}
+.loading-text, .empty-text, .error-text, .no-content-text {
+  font-size: 0.875rem;
+  color: #8a6642; /* 与learn.vue的次要文本颜色一致 */
+}
+.empty-container, .error-container, .no-content-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.875rem 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.05);
+}
+.retry-button {
+  margin-top: 0.9375rem;
+  background: linear-gradient(135deg, #8a6642 0%, #6d4126 100%);
+  color: #fff;
+  padding: 0.46875rem 1.25rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.1875rem 0.46875rem rgba(109, 65, 38, 0.25);
+  transition: all 0.3s;
+}
+.retry-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0.125rem 0.3125rem rgba(109, 65, 38, 0.2);
+}
+.retry-text {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.no-content-tip {
+  padding: 0.9375rem 0;
+  background-color: rgba(245, 240, 230, 0.8);
+  margin: 0.625rem 0;
+}
+.card-footer {
+  padding: 0.46875rem 0.9375rem;
+  background-color: #f9f5ef;
+  display: flex;
+  justify-content: center;
+}
+.footer-decoration {
+  width: 2.5rem;
+  height: 0.1875rem;
+  background: linear-gradient(90deg, transparent, rgba(109, 65, 38, 0.3), transparent);
+  border-radius: 0.09375rem;
+}

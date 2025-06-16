@@ -1,0 +1,295 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8f4e9;
+  position: relative;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 100;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+.status-bar {
+  height: 44px; /* 适配iPhone状态栏高度 */
+  width: 100%;
+}
+.nav-content {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  border-bottom: 1px solid #f0e6d2;
+}
+.back-button {
+  width: 70rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(248, 244, 233, 0.8);
+  border-radius: 50%;
+}
+.back-icon {
+  font-size: 40rpx;
+  color: #6d4126;
+  font-weight: bold;
+}
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #6d4126;
+}
+.content-scroll {
+  flex: 1;
+  height: calc(100vh - 134px); /* 44px状态栏 + 90rpx导航栏 */
+  margin-top: 134px; /* 44px状态栏 + 90rpx导航栏 */
+  padding-bottom: 100rpx; /* 从120rpx减小到100rpx，因为评论框高度减小了 */
+  box-sizing: border-box;
+}
+.post-detail-card {
+  margin: 20rpx 30rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background-color: #f0e6d2;
+  border: 2rpx solid #e1d4c0;
+}
+.user-details {
+  margin-left: 20rpx;
+}
+.author-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #6d4126;
+}
+.post-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+.post-content {
+  margin: 30rpx 0;
+}
+.post-text {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.6;
+  word-break: break-all;
+}
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #f0e6d2;
+  padding-top: 20rpx;
+  margin-top: 20rpx;
+}
+.action-item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+  transition: background-color 0.2s;
+}
+.action-item:active {
+  background-color: #f0e6d2;
+}
+.action-icon {
+  font-size: 36rpx;
+  margin-right: 10rpx;
+}
+.action-text {
+  font-size: 28rpx;
+  color: #666;
+}
+.action-count {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+}
+.liked {
+  color: #ff6b6b;
+}
+.liked-text {
+  color: #ff6b6b;
+}
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 30rpx;
+  margin: 10rpx 0;
+  background-color: #ffffff;
+  border-top: 1px solid #f0e6d2;
+  border-bottom: 1px solid #f0e6d2;
+}
+.comments-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #6d4126;
+}
+.comments-count {
+  font-size: 24rpx;
+  color: #999;
+}
+.comment-list {
+  padding: 0 30rpx;
+}
+.comment-item {
+  padding: 20rpx;
+  background-color: #ffffff;
+  border-radius: 12rpx;
+  margin-bottom: 15rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+.comment-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  background-color: #f0e6d2;
+  border: 2rpx solid #e1d4c0;
+}
+.comment-info {
+  margin-left: 12rpx;
+  flex: 1;
+}
+.comment-author {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #6d4126;
+}
+.comment-time {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 2rpx;
+}
+.comment-content {
+  padding-left: 62rpx;
+}
+.comment-text {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 1.5;
+  word-break: break-all;
+}
+.empty-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+}
+.empty-icon {
+  width: 160rpx;
+  height: 160rpx;
+  margin-bottom: 15rpx;
+}
+.empty-text {
+  font-size: 26rpx;
+  color: #999;
+}
+.comment-box {
+  position: fixed;
+  bottom: 30rpx; /* 从20rpx改为30rpx，上移评论框 */
+  left: 30rpx;
+  right: 30rpx;
+  height: 80rpx; /* 从90rpx减小到80rpx，使评论框更紧凑 */
+  background-color: #ffffff;
+  padding: 10rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 40rpx; /* 增大圆角，更符合iOS风格 */
+  border: 1px solid #f0e6d2;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  z-index: 99;
+}
+.comment-input {
+  flex: 1;
+  height: 60rpx; /* 从70rpx减小到60rpx */
+  background-color: transparent;
+  border-radius: 35rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.comment-submit {
+  width: 120rpx;
+  height: 60rpx; /* 从70rpx减小到60rpx */
+  background-color: #6d4126;
+  color: #ffffff;
+  border-radius: 30rpx;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.comment-submit:active {
+  background-color: #5a351f;
+}
+.comment-submit[disabled] {
+  background-color: #ccc;
+  color: #fff;
+}
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 999;
+}
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid #f0e6d2;
+  border-top-color: #6d4126;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+.loading-text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+@keyframes spin {
+0% { transform: rotate(0deg);
+}
+100% { transform: rotate(360deg);
+}
+}

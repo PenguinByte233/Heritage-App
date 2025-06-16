@@ -1,0 +1,246 @@
+
+.container {
+  padding: 0;
+  background-color: #f0e6d2; /* 统一背景色 */
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.top-area {
+  background-color: #f0e6d2;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+.status-bar {
+  height: 44px; /* 适配顶部安全区域 */
+  background-color: #f0e6d2;
+}
+.header {
+  padding: 20rpx 30rpx;
+  background-color: #f0e6d2;
+  border-bottom: 1px solid #f0e6d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #6d4126;
+  text-align: center;
+}
+.search-box {
+  margin: 20rpx 30rpx;
+  height: 70rpx;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 35rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.search-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.search-placeholder {
+  font-size: 28rpx;
+  color: #999;
+}
+.banner-container {
+  margin: 20rpx 30rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+.banner-swiper {
+  height: 300rpx;
+}
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+.category-icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 40rpx 20rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20rpx;
+  border-radius: 16rpx;
+}
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+.category-name {
+  font-size: 24rpx;
+  color: #333;
+}
+
+/* 地图区域样式 */
+.map-section {
+  margin: 30rpx 20rpx;
+  padding: 20rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16rpx;
+}
+.map-container {
+  margin-top: 20rpx;
+}
+.map-card {
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+}
+.map-image {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+}
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx 20rpx;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.map-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+  display: block;
+}
+.map-subtitle {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+.map-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 0 30rpx;
+}
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12rpx;
+  margin: 0 10rpx;
+}
+.stat-item:first-child {
+  margin-left: 0;
+}
+.stat-item:last-child {
+  margin-right: 0;
+}
+.stat-number {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #6d4126;
+  margin-bottom: 8rpx;
+}
+.stat-label {
+  font-size: 24rpx;
+  color: #8a6642;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 30rpx 20rpx;
+}
+.section-title-container {
+  display: flex;
+  align-items: center;
+}
+.section-icon {
+  margin-right: 10rpx;
+}
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #6d4126;
+}
+.more-container {
+  display: flex;
+  align-items: center;
+}
+.more-text {
+  font-size: 24rpx;
+  color: #6d4126;
+  margin-right: 5rpx;
+}
+.content-container {
+  padding: 20rpx 0;
+}
+.projects-content {
+  position: relative;
+}
+.border-decoration {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40rpx;
+  height: 300rpx;
+  background-color: rgba(109, 65, 38, 0.2);
+  border-radius: 20rpx;
+  z-index: 1;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.item-swiper {
+  height: 400rpx;
+}
+.swiper-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-card {
+  width: 90%;
+  height: 340rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+.current-item {
+  height: 380rpx;
+  box-shadow: 0 8rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.item-image {
+  width: 100%;
+  height: 100%;
+}
+.item-title-bar {
+  margin: 20rpx 30rpx 10rpx;
+  text-align: center;
+}
+.item-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #6d4126;
+}
+.item-description {
+  margin: 0 60rpx;
+  text-align: center;
+}
+.item-description-text {
+  font-size: 24rpx;
+  color: #6d4126;
+  line-height: 1.5;
+}

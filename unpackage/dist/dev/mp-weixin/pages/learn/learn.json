@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "学习",
+  "usingComponents": {
+    "tutorial-card": "../../components/TutorialCard"
+  }
+}

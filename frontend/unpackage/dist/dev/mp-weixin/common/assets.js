@@ -1,0 +1,15 @@
+"use strict";
+const _imports_0$6 = "/static/images/empty-products.png";
+const _imports_0$5 = "/static/images/QR/douyin-qrcode.png";
+const _imports_0$4 = "/static/images/empty-posts.png";
+const _imports_0$3 = "/static/images/empty-comments.png";
+const _imports_0$2 = "/static/images/avatar/空中花园.png";
+const _imports_0$1 = "/static/images/empty-order.png";
+const _imports_0 = "/static/images/logo.png";
+exports._imports_0 = _imports_0$6;
+exports._imports_0$1 = _imports_0$5;
+exports._imports_0$2 = _imports_0$4;
+exports._imports_0$3 = _imports_0$3;
+exports._imports_0$4 = _imports_0$2;
+exports._imports_0$5 = _imports_0$1;
+exports._imports_0$6 = _imports_0;

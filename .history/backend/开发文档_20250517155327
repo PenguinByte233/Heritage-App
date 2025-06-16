@@ -1,0 +1,114 @@
+1. 用户表 (user table)
+主要存储用户的基本信息：
+
+字段名	数据类型	描述
+id	INTEGER	用户唯一 ID，主键，自增
+username	TEXT	用户名
+password	TEXT	用户密码（建议加密存储）
+email	TEXT	用户邮箱，可选
+avatar_path	TEXT	用户头像的图片路径
+create_time	DATETIME	用户创建时间
+2. 学习表 (study table)
+主要存储学习相关内容，包括分类、大类、小类、资源路径等：
+
+字段名	数据类型	描述
+id	INTEGER	学习内容的唯一 ID，主键，自增
+major_category	TEXT	大类名（如 "传统艺术"）
+minor_category	TEXT	小类名（如 "剪纸"）
+image_path	TEXT	图片资源路径
+content_path	TEXT	内容文本路径
+3. 社区帖子表 (posts table)
+主要存储由用户发布的社区帖子，比如交流学习心得或相关内容：
+
+字段名	数据类型	描述
+id	INTEGER	帖子唯一 ID，主键，自增
+user_id	INTEGER	发布帖子的用户 ID，外键，关联 user 表
+title	TEXT	帖子标题
+content	TEXT	帖子内容
+image_path	TEXT	帖子配图路径（可选）
+create_time	DATETIME	帖子创建时间
+update_time	DATETIME	帖子更新时间（可选）
+4. 商品表 (product table)
+主要存储商品信息，比如商品名称、价格、介绍等：
+
+字段名	数据类型	描述
+id	INTEGER	商品唯一 ID，主键，自增
+name	TEXT	商品名称
+description	TEXT	商品描述（可选）
+price	REAL	商品价格
+image_path	TEXT	商品图片路径
+stock	INTEGER	商品库存数量
+create_time	DATETIME	商品上架时间
+5. 外键说明
+社区帖子表的 user_id 字段是外键，关联到用户表的 id 字段。
+如果需要增强数据一致性，可以在设计时明确外键关系。
+预建 SQL 文档
+下面是创建上述表的 SQL 代码，你可以直接执行这些代码来初始化你的 SQLite 数据库：
+
+SQL
+-- 创建用户表
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL,
+    email TEXT,
+    avatar_path TEXT,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 创建学习表
+CREATE TABLE study (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    major_category TEXT NOT NULL,
+    minor_category TEXT NOT NULL,
+    image_path TEXT NOT NULL,
+    content_path TEXT NOT NULL
+);
+
+-- 创建社区帖子表
+CREATE TABLE posts (
+    INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    image_path TEXT,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    update_time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user (id)
+);
+
+-- 创建商品表
+CREATE TABLE product (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    description TEXT,
+    price REAL NOT NULL,
+    image_path TEXT NOT NULL,
+    stock INTEGER DEFAULT 0,
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+字段规划的说明
+1. 用户表 (user)
+密码（password）：
+请确保在项目中加密存储用户密码，比如使用 bcrypt 或其他加密算法。
+头像路径（avatar_path）：
+如果用户上传头像，可以存储头像的网络路径或本地存储路径，但需提供默认头像路径。
+2. 学习表 (study)
+大类（major_category）和小类（minor_category）：
+表示学习内容的分类，例如：
+大类："传统艺术"
+小类："剪纸"
+图片路径（image_path）和内容文本路径（content_path）：
+用于显示学习资源内容，路径可以是本地路径或网络路径。
+3. 社区帖子表 (posts)
+内容（content）：
+支持存储用户的长文本帖子内容。
+时间字段（create_time 和 update_time）：
+create_time：表示帖子发布时间。
+update_time：当帖子被编辑时更新。
+4. 商品表 (product)
+价格（price）：
+使用 REAL 类型，方便支持小数值（例如商品价格 19.99 元）。
+库存（stock）：
+表示商品的数量，默认初始化为 0。
+根据上述数据库的
